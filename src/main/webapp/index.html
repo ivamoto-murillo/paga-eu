@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title>Paga eu!</title>
+		
+		<script type="text/javascript" src="js/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+		
+		<script type="text/javascript" src="js/module/app.module.js"></script>
+		<script type="text/javascript" src="js/routes/routes.js"></script>
+		
+		<script type="text/javascript" src="js/controllers/MainController.js"></script>
+		<script type="text/javascript" src="js/controllers/LoginController.js"></script>
+        
+        <base href="/paga-eu/" />
+	</head>
+	<body>
+        <div ng-controller="MainController">
+            <div ng-view></div>
+        </div>
+	</body>
+</html>

@@ -1,2 +1,11 @@
+# Gradle files or folders
 .gradle
+
+# Java files or folders
 /bin/
+
+# Eclipse files or folders
+.classpath
+.project
+.settings/
+build/

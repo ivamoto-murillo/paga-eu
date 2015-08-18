@@ -1,4 +1,12 @@
-apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+eclipse.classpath.file {
+    withXml { xml ->
+        def node = xml.asNode()
+        node.appendNode( 'classpathentry', [kind: 'con', path: 'org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/WildFly 8.x Runtime'])
+    }
+}
 
 repositories {
     jcenter()

@@ -2,6 +2,8 @@
 <html ng-app="app">
 	<head>
 		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<title>Paga eu!</title>
         
         <base href="/paga-eu/" />
@@ -25,12 +27,14 @@
         <!-- JavaScript -->
 
         <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dist/AdminLTE.min.css">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/icons/ionicons.min.css">
         <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
         <!-- CSS -->
 	</head>
-	<body>
-        <div ng-controller="MainController">
-            <div ng-view></div>
-        </div>
+	<body ng-controller="MainController" ng-class="[bodyStyle]">
+        <div ng-view></div>
 	</body>
 </html>

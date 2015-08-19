@@ -1,5 +1,5 @@
 app.controller('LoginController', ['$scope', function($scope) {
-	console.log('LoginController iniciado!');
+	setBodyStyle('hold-transition login-page');
 	
 	$scope.user = {
 		userName: '',

@@ -4,6 +4,11 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
                 templateUrl: 'views/templates/login.html',
                 controller: 'LoginController'
             })
+            .when('/register', {
+                url: '/register',
+                templateUrl: 'views/templates/register.html',
+                controller: 'RegisterController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -12,4 +17,5 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             enabled: true,
             requireBase: false
         });
+        /*$locationProvider.html5Mode(true);*/
     }]);

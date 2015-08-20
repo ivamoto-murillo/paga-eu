@@ -14,6 +14,9 @@ repositories {
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.ocpsoft.rewrite:rewrite-servlet:2.0.12.Final'
+    
+    providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
 
     testCompile 'junit:junit:4.12'
 }

@@ -7,5 +7,5 @@
 
 ## To make the project in Eclipse
 
-1 - Run `gradle build eclipse` in the root `build.gradle`;
-2 - Go to Eclipse and use the wizard to import a project Gradle or an existing project.
+1. Run `gradle build eclipse` in the root `build.gradle`;
+2. Go to Eclipse and use the wizard to import a project Gradle or an existing project.

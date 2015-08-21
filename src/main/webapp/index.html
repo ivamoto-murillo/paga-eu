@@ -21,22 +21,26 @@
 		<script type="text/javascript" src="resources/js/angular/angular-translate.min.js"></script>
 		
 		<script type="text/javascript" src="views/angular/module/app.module.js"></script>
-		<script type="text/javascript" src="resources/js/routes/routes.js"></script>
+		<script type="text/javascript" src="views/angular/routes/routes.js"></script>
 		<script type="text/javascript" src="resources/js/providers/TranslateProvider.js"></script>
 		
 		<script type="text/javascript" src="views/angular/controllers/MainController.js"></script>
 		<script type="text/javascript" src="views/angular/controllers/LoginController.js"></script>
+		<script type="text/javascript" src="views/angular/controllers/RegisterController.js"></script>
         <!-- JavaScript -->
 
         <!-- CSS -->
         <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="resources/css/dist/AdminLTE.min.css">
         <link rel="stylesheet" href="resources/css/fonts/font-awesome.min.css">
         <link rel="stylesheet" href="resources/css/icons/ionicons.min.css">
+        <link rel="stylesheet" href="resources/css/dist/AdminLTE.min.css">
         <link rel="stylesheet" href="resources/plugins/iCheck/square/blue.css">
         <!-- CSS -->
 	</head>
 	<body ng-controller="MainController" ng-class="[bodyStyle]">
+        <a href="" ng-click="setLanguage('en')">English</a>
+        <a href="" ng-click="setLanguage('pt')">Português</a>
+        
         <div ng-view></div>
 	</body>
 </html>

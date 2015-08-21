@@ -10,7 +10,12 @@ app.config(['$translateProvider', function ($translateProvider) {
         REMEMBER_ME: 'Continuar conectado',
         SIGN_IN: 'Entrar',
         FORGOT_PASSWORD: 'Esqueci minha senha',
-        REGISTER_NEW_MEMBER: 'Criar novo usuário'
+        REGISTER_NEW_MEMBER: 'Criar novo usuário',
+        FULL_NAME: 'Nome completo',
+        RETYPE_PASSWORD: 'Confirme sua senha',
+        AGREE_TERMS: 'Eu aceitos os <a href="#">termos</a>',
+        REGISTER: 'Registrar',
+        HAVE_MEMBERSHIP: 'Eu já tenho um usuário'
     });
     
     $translateProvider.translations('en', {
@@ -21,6 +26,11 @@ app.config(['$translateProvider', function ($translateProvider) {
         REMEMBER_ME: 'Remember me',
         SIGN_IN: 'Sign in',
         FORGOT_PASSWORD: 'I forgot my password',
-        REGISTER_NEW_MEMBER: 'Register a new membership'
+        REGISTER_NEW_MEMBER: 'Register a new membership',
+        FULL_NAME: 'Full name',
+        RETYPE_PASSWORD: 'Retype password',
+        AGREE_TERMS: 'I agree to the <a href="#">terms</a>',
+        REGISTER: 'Register',
+        HAVE_MEMBERSHIP: 'I already have a membership'
     });
 }]);

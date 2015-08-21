@@ -7,9 +7,14 @@ import static org.junit.Assert.*;
  *
  * @author murillo.ivamoto, @date 18/08/15 09:38
  */
-public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+public class JUnitTest {
+	
+    @Test public void testJUnit() {
+    	String utWorking = "Unity test working!";
+    	
+        System.out.println(utWorking);
+        
+        assertSame("Same Strings!", "Unity test working!", utWorking);
     }
+    
 }

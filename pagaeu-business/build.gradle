@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+dependencies {
+    compile project(':pagaeu-domain')
+    compile project(':pagaeu-dao')
+
+    testCompile 'junit:junit:4.12'
+}

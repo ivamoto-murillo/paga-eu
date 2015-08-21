@@ -1,0 +1,5 @@
+rootProject.name = 'pagaeu-web'
+
+include '../pagaeu-domain'
+include '../pagaeu-dao'
+include '../pagaeu-business'

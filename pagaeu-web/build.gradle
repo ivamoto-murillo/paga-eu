@@ -2,19 +2,24 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
 allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
     group = 'br.com.pagaeu'
     version = '1.0'
 
     repositories {
         jcenter()
     }
-}
-
-subprojects {
-    apply plugin: 'java'
-    apply plugin: 'eclipse'
 
     dependencies {
+        compile ('org.springframework:spring-context:4.2.0.RELEASE') {
+            exclude group: 'org.springframework', module: 'spring-aop'
+            exclude group: 'org.springframework', module: 'spring-beans'
+            exclude group: 'org.springframework', module: 'spring-core'
+            exclude group: 'org.springframework', module: 'spring-expression'
+        }
+
         testCompile 'junit:junit:4.12'
     }
 }
@@ -32,15 +37,6 @@ dependencies {
     compile project(':pagaeu-business')
 
     compile 'org.ocpsoft.rewrite:rewrite-servlet:2.0.12.Final'
-    compile ('org.springframework:spring-context:4.2.0.RELEASE') {
-        exclude group: 'org.springframework', module: 'spring-aop'
-        exclude group: 'org.springframework', module: 'spring-beans'
-        exclude group: 'org.springframework', module: 'spring-core'
-        exclude group: 'org.springframework', module: 'spring-expression'
-    }
     
     providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
-    providedCompile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
-
-    testCompile 'junit:junit:4.12'
 }

@@ -1,4 +1,4 @@
-package br.com.pegaeu.servlets;
+package br.com.pagaeu.servlets;
 
 import javax.servlet.ServletContext;
 

@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':pagaeu-domain')
+    compile project(':pagaeu-dao')
+}

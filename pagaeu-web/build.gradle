@@ -1,6 +1,24 @@
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
+allprojects {
+    group = 'br.com.pagaeu'
+    version = '1.0'
+
+    repositories {
+        jcenter()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+}
+
 eclipse.classpath.file {
     withXml { xml ->
         def node = xml.asNode()
@@ -8,15 +26,15 @@ eclipse.classpath.file {
     }
 }
 
-repositories {
-    jcenter()
-}
-
 dependencies {
+    compile project(':pagaeu-domain')
+    compile project(':pagaeu-dao')
+    compile project(':pagaeu-business')
+
     compile 'org.slf4j:slf4j-api:1.7.12'
     compile 'org.ocpsoft.rewrite:rewrite-servlet:2.0.12.Final'
-    
-    providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
 
     testCompile 'junit:junit:4.12'
+
+    providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
 }

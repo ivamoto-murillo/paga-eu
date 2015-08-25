@@ -1,13 +1,19 @@
 package br.com.pagaeu.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.pagaeu.models.generics.GenericDTO;
+
 @Entity
-public class User {
+public class UserDTO extends GenericDTO {
 	
+	private static final long serialVersionUID = 4964757910470492067L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -18,6 +24,11 @@ public class User {
 	
 	private String password;
 
+	@Override
+	public Serializable getKey() {
+		return this.getId();
+	}
+	
 	public Long getId() {
 		return id;
 	}

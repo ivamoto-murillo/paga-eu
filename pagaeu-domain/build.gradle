@@ -1,5 +1,12 @@
 apply plugin: 'nebula.provided-base'
 
 dependencies {
+    compile ('org.springframework:spring-context:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-aop'
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-core'
+        exclude group: 'org.springframework', module: 'spring-expression'
+    }
+    
     provided 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
 }

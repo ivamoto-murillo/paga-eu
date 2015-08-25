@@ -24,6 +24,20 @@ allprojects {
     }
 }
 
+subprojects {
+    buildscript {
+        repositories {
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
+
+        dependencies {
+            classpath "com.netflix.nebula:gradle-extra-configurations-plugin:2.2.2"
+        }
+    }
+}
+
 eclipse.classpath.file {
     withXml { xml ->
         def node = xml.asNode()

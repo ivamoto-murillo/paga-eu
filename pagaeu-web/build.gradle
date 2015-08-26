@@ -2,20 +2,39 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
 allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
     group = 'br.com.pagaeu'
     version = '1.0'
 
     repositories {
         jcenter()
     }
+
+    dependencies {
+        compile ('org.springframework:spring-context:4.2.0.RELEASE') {
+            exclude group: 'org.springframework', module: 'spring-aop'
+            exclude group: 'org.springframework', module: 'spring-beans'
+            exclude group: 'org.springframework', module: 'spring-core'
+            exclude group: 'org.springframework', module: 'spring-expression'
+        }
+
+        testCompile 'junit:junit:4.12'
+    }
 }
 
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'eclipse'
+    buildscript {
+        repositories {
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
 
-    dependencies {
-        testCompile 'junit:junit:4.12'
+        dependencies {
+            classpath "com.netflix.nebula:gradle-extra-configurations-plugin:2.2.2"
+        }
     }
 }
 
@@ -31,10 +50,34 @@ dependencies {
     compile project(':pagaeu-dao')
     compile project(':pagaeu-business')
 
-    compile 'org.slf4j:slf4j-api:1.7.12'
     compile 'org.ocpsoft.rewrite:rewrite-servlet:2.0.12.Final'
-
-    testCompile 'junit:junit:4.12'
-
+    compile ('org.springframework:spring-web:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-aop'
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-context'
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-webmvc:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-context'
+        exclude group: 'org.springframework', module: 'spring-core'
+        exclude group: 'org.springframework', module: 'spring-expression'
+        exclude group: 'org.springframework', module: 'spring-web'
+    }
+    compile ('org.springframework:spring-beans:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-expression:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-core:4.2.0.RELEASE') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile ('org.springframework:spring-aop:4.2.0.RELEASE') {
+        exclude group: 'aopalliance', module: 'aopalliance'
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    
     providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
 }

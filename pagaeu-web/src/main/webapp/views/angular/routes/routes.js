@@ -17,5 +17,4 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             enabled: true,
             requireBase: false
         });
-        /*$locationProvider.html5Mode(true);*/
     }]);

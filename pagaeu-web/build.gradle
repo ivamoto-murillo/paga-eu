@@ -54,7 +54,29 @@ dependencies {
     compile ('org.springframework:spring-web:4.2.0.RELEASE') {
         exclude group: 'org.springframework', module: 'spring-aop'
         exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-context'
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-webmvc:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-context'
+        exclude group: 'org.springframework', module: 'spring-core'
         exclude group: 'org.springframework', module: 'spring-expression'
+        exclude group: 'org.springframework', module: 'spring-web'
+    }
+    compile ('org.springframework:spring-beans:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-expression:4.2.0.RELEASE') {
+        exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile ('org.springframework:spring-core:4.2.0.RELEASE') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile ('org.springframework:spring-aop:4.2.0.RELEASE') {
+        exclude group: 'aopalliance', module: 'aopalliance'
+        exclude group: 'org.springframework', module: 'spring-beans'
+        exclude group: 'org.springframework', module: 'spring-core'
     }
     
     providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final'
